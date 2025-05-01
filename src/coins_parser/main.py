@@ -13,8 +13,10 @@ COINS_HTML_ELEMENT_CLASS: str = "Z3988"
 class CoinsParser:
 
     @staticmethod
-    def parse(html: str) -> CoinList:
-        soup = BeautifulSoup(html, "html.parser")
+    def parse(html: str, beautiful_soup_parser: str = None) -> CoinList:
+        if beautiful_soup_parser is None:
+            beautiful_soup_parser = "html.parser"
+        soup = BeautifulSoup(html, beautiful_soup_parser)
 
         coins = []
         for coin_element in soup.find_all(

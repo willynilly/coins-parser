@@ -3,7 +3,8 @@
 Parses and creates COinS metadata tags. Can be used with Zotero.
 
 [![PyPI - Version](https://img.shields.io/pypi/v/coins-parser.svg)](https://pypi.org/project/coins-parser)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/coins-parser.svg)](https://pypi.org/project/coins-parser)
+![Python Version from PEP 621 TOML](https://img.shields.io/python/required-version-toml?tomlFilePath=https%3A%2F%2Fraw.githubusercontent.com%2Fwillynilly%2Fcoins-parser%2Fmain%2Fpyproject.toml)
+
 
 ---
 
@@ -36,6 +37,13 @@ html_with_coins_tags: str = ""
 coins = CoinsParser.parse(html_with_coins_tags)
 for coin in coins:
     print(coin)
+```
+
+You can also specify the HTML parser used to [any parser supported by beautifulsoup4](https://beautiful-soup-4.readthedocs.io/en/latest/#installing-a-parser). By default, the HTML parser is 'html.parser', which does not require installing additional packages. However, if you want to use a different HTML parser, like 'lxml', you will first need to install it as described in the previous link.
+
+```
+### parse the COinS tags using the lxml parser
+coins = CoinsParser.parse(html_with_coins_tags, beautiful_soup_parser='lxml')
 ```
 
 You can covert COinS objects back into HTML. 
