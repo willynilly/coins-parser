@@ -22,3 +22,12 @@ keywords:
 license: Apache-2.0
 version: "1.0.1"
 date-released: "2025-05-01"
+references:
+  - title: Beautiful Soup
+    type: software
+    version: 4.13.4
+    authors:
+    - name: "Leonard Richardson"
+      email: leonardr@segfault.org
+    repository-code: https://code.launchpad.net/beautifulsoup
+    license: MIT

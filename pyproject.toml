@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "coins-parser"
-version = "1.0.0"
+version = "1.0.1"
 description = "Parses and creates COinS metadata tags. Can be used with Zotero."
 readme = "README.md"
 requires-python = ">=3.9"
