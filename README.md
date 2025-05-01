@@ -3,7 +3,7 @@
 Parses and creates COinS metadata tags. Can be used with Zotero.
 
 [![PyPI - Version](https://img.shields.io/pypi/v/coins-parser.svg)](https://pypi.org/project/coins-parser)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/cff2toml.svg)](https://pypi.org/project/coins-parser)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/coins-parser.svg)](https://pypi.org/project/coins-parser)
 
 ---
 
