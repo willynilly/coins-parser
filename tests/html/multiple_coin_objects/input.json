@@ -1,0 +1,126 @@
+[
+    [
+        [
+            "url_ver",
+            "Z39.88-2004"
+        ],
+        [
+            "ctx_ver",
+            "Z39.88-2004"
+        ],
+        [
+            "rfr_id",
+            "info:sid/zotero.org:2"
+        ],
+        [
+            "rft_val_fmt",
+            "info:ofi/fmt:kev:mtx:dc"
+        ],
+        [
+            "rft.type",
+            "computerProgram"
+        ],
+        [
+            "rft.title",
+            "MyOtherApp"
+        ],
+        [
+            "rft.publisher",
+            "Some Other Company"
+        ],
+        [
+            "rft.description",
+            "This is another example dummy software for testing."
+        ],
+        [
+            "rft.identifier",
+            "https://zenodo.org/records/somenumber2"
+        ],
+        [
+            "rft.aufirst",
+            "Willa"
+        ],
+        [
+            "rft.aulast",
+            "Biley"
+        ],
+        [
+            "rft.au",
+            "Willa Biley"
+        ],
+        [
+            "rft.au",
+            "Wilò Rilü"
+        ],
+        [
+            "rft.au",
+            "Jil van Hilo"
+        ],
+        [
+            "rft.date",
+            "2025-04-20"
+        ]
+    ],
+    [
+        [
+            "url_ver",
+            "Z39.88-2004"
+        ],
+        [
+            "ctx_ver",
+            "Z39.88-2004"
+        ],
+        [
+            "rfr_id",
+            "info:sid/zotero.org:2"
+        ],
+        [
+            "rft_val_fmt",
+            "info:ofi/fmt:kev:mtx:dc"
+        ],
+        [
+            "rft.type",
+            "computerProgram"
+        ],
+        [
+            "rft.title",
+            "MyOtherApp"
+        ],
+        [
+            "rft.publisher",
+            "Some Other Company"
+        ],
+        [
+            "rft.description",
+            "This is another example dummy software for testing."
+        ],
+        [
+            "rft.identifier",
+            "https://zenodo.org/records/somenumber2"
+        ],
+        [
+            "rft.aufirst",
+            "Willa"
+        ],
+        [
+            "rft.aulast",
+            "Biley"
+        ],
+        [
+            "rft.au",
+            "Willa Biley"
+        ],
+        [
+            "rft.au",
+            "Wilò Rilü"
+        ],
+        [
+            "rft.au",
+            "Jil van Hilo"
+        ],
+        [
+            "rft.date",
+            "2025-04-20"
+        ]
+    ]
+]

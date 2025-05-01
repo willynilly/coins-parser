@@ -27,9 +27,12 @@ class CoinsParser:
 
     @staticmethod
     def html(coins: CoinList) -> str:
+        if not isinstance(coins, list):
+            return ""
         html = ""
         for coin in coins:
-            html += f'<{COINS_HTML_ELEMENT} class="{COINS_HTML_ELEMENT_CLASS}" {COINS_HTML_ELEMENT_ATTRIBUTE}="{urlencode(coin)}"></{COINS_HTML_ELEMENT}>'
+            if isinstance(coin, list) and len(coin) > 0:
+                html += f'<{COINS_HTML_ELEMENT} class="{COINS_HTML_ELEMENT_CLASS}" {COINS_HTML_ELEMENT_ATTRIBUTE}="{urlencode(coin)}"></{COINS_HTML_ELEMENT}>'
         return html
 
     if __name__ == "__main__":

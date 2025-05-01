@@ -3,5 +3,16 @@
         "tests"
     ],
     "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true
+    "python.testing.pytestEnabled": true,
+
+    "files.associations": {
+        "**/tests/**/expected.html": "testexpectedhtml",
+        "**/tests/**/input.html": "testinputhtml"
+    },
+    "[testexpectedhtml]": {
+        "editor.formatOnSave": false
+    },
+    "[testinputhtml]": {
+        "editor.formatOnSave": false
+    }
 }
