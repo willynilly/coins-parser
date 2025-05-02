@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "coins-parser"
-version = "1.1.0"
+version = "1.1.1"
 description = "Parses and creates COinS metadata tags. Can be used with Zotero."
 readme = "README.md"
 requires-python = ">=3.9"
@@ -33,10 +33,10 @@ classifiers = [
 dependencies = ["beautifulsoup4>=4.13.4"]
 
 [project.urls]
-Homepage = "https://github.com/willynilly/nodejs2cff"
-Documentation = "https://github.com/willynilly/nodejs2cff#readme"
-Issues = "https://github.com/willynilly/nodejs2cff/issues"
-Source = "https://github.com/willynilly/nodejs2cff"
+Homepage = "https://github.com/willynilly/coins-parser"
+Documentation = "https://github.com/willynilly/coins-parser#readme"
+Issues = "https://github.com/willynilly/coins-parser/issues"
+Source = "https://github.com/willynilly/coins-parser"
 
 [project.optional-dependencies]
 testing = [
