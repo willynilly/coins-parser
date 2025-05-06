@@ -28,22 +28,26 @@ pip install coins-parser
 Zotero allows you to export references as COinS tags. You can use this package to parse them and use them in your Python packages. This package offers a CoinsParser class that can parse an HTML string containing COinS tags into a Python list. This list contains a list of COinS metadata for each COinS span tag found in the HTML string.
 
 ```console
-# parse a single COinS tag
+# parse several COinS tags from an HTML string (it will ignore the other HTML elements)
 from coins_parser import CoinsParser
 
-html_with_coins_tags: str = ""
+html_with_coins_tags: str = """
+<span class="Z3988" title="url_ver=Z39.88-2004&ctx_ver=Z39.88-2004&rfr_id=info%3Asid%2Fzotero.org%3A2&rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&rft.type=computerProgram&rft.title=MyOtherApp&rft.publisher=Some+Other+Company&rft.description=This+is+another+example+dummy+software+for+testing.&rft.identifier=https%3A%2F%2Fzenodo.org%2Frecords%2Fsomenumber2&rft.aufirst=Willa&rft.aulast=Biley&rft.au=Willa+Biley&rft.au=Wil%C3%B2+Ril%C3%BC&rft.au=Jil+van+Hilo&rft.date=2025-04-20"></span>
 
-# print metadata for each COinS tag
-coins = CoinsParser.parse(html_with_coins_tags)
-for coin in coins:
-    print(coin)
+<span class="Z3988" title="url_ver=Z39.88-2004&ctx_ver=Z39.88-2004&rfr_id=info%3Asid%2Fzotero.org%3A2&rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&rft.type=computerProgram&rft.title=MyOtherApp&rft.publisher=Some+Other+Company&rft.description=This+is+another+example+dummy+software+for+testing.&rft.identifier=https%3A%2F%2Fzenodo.org%2Frecords%2Fsomenumber2&rft.aufirst=Willa&rft.aulast=Biley&rft.au=Willa+Biley&rft.au=Wil%C3%B2+Ril%C3%BC&rft.au=Jil+van+Hilo&rft.date=2025-04-20"></span>
+"""
+
+# print metadata for each found COinS tag
+coin_spans: CoinSpanList = CoinsParser.parse(html_with_coins_tags)
+for coin_span in coin_spans:
+    print(coin_span)
 ```
 
 You can also specify the HTML parser used to [any parser supported by beautifulsoup4](https://beautiful-soup-4.readthedocs.io/en/latest/#installing-a-parser). By default, the HTML parser is 'html.parser', which does not require installing additional packages. However, if you want to use a different HTML parser, like 'lxml', you will first need to install it as described in the previous link.
 
 ```
 ### parse the COinS tags using the lxml parser
-coins = CoinsParser.parse(html_with_coins_tags, beautiful_soup_parser='lxml')
+coin_spans: CoinSpanList = CoinsParser.parse(html_with_coins_tags, beautiful_soup_parser='lxml')
 ```
 
 You can covert COinS objects back into HTML. 
@@ -54,7 +58,7 @@ so Zotero can recognize one or more items on a single page.
 # Create two COinS objects
 from coins_parser import CoinsParser
 
-coin_1: list[tuple[str, str]] = [
+coin_span_1: CoinSpan = [
     ("url_ver", "Z39.88-2004"),
     ("ctx_ver", "Z39.88-2004"),
     ("rfr_id", "info:sid/zotero.org:2"),
@@ -72,7 +76,7 @@ coin_1: list[tuple[str, str]] = [
     ("rft.date", "2025-04-15"),
 ]
 
-coin_2: list[tuple[str, str]] = [
+coin_span_2: CoinSpan = [
     ("url_ver", "Z39.88-2004"),
     ("ctx_ver", "Z39.88-2004"),
     ("rfr_id", "info:sid/zotero.org:2"),
@@ -89,8 +93,8 @@ coin_2: list[tuple[str, str]] = [
     ("rft.au", "Jil van Hilo"),
     ("rft.date", "2025-04-11"),
 ]
-coins: list[list[tuple[str, str]]] = [coin_1, coin_2]
-html: str = CoinsParser.html(coins)  
+coin_spans: list[CoinSpan] = [coin_span_1, coin_span_2]
+html: str = CoinsParser.html(coin_spans)  
 print(html)
 ```
 

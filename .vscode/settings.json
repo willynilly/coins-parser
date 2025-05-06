@@ -14,5 +14,7 @@
     },
     "[testinputhtml]": {
         "editor.formatOnSave": false
-    }
+    },
+    "python.analysis.typeCheckingMode": "basic"
+
 }

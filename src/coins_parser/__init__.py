@@ -1,1 +1,1 @@
-from .main import CoinsParser, Coin, CoinTerm, CoinList
+from .main import CoinsParser, CoinSpan, CoinSpanTerm, CoinSpanList

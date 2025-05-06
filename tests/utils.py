@@ -1,4 +1,4 @@
-from coins_parser import CoinsParser, CoinList
+from coins_parser import CoinsParser, CoinSpanList, CoinSpanTerm
 from pathlib import Path
 import json
 
@@ -24,8 +24,8 @@ def run_parse_test(test_name: str):
     expected_json: str = load_json(
         test_group=test_group, test_name=test_name, file_name="expected.json"
     )
-    coins: CoinList = CoinsParser.parse(input_html)
-    assert json.dumps(coins, ensure_ascii=False) == expected_json
+    coin_spans: CoinSpanList = CoinsParser.parse(input_html)
+    assert json.dumps(coin_spans, ensure_ascii=False) == expected_json
 
 
 def run_html_test(test_name: str):
@@ -36,9 +36,10 @@ def run_html_test(test_name: str):
     expected_html: str = load_html(
         test_group=test_group, test_name=test_name, file_name="expected.html"
     )
-    coins: CoinList = []
-    for raw_coin_list in json.loads(input_json):
-        coins.append([tuple(raw_coin_term) for raw_coin_term in raw_coin_list])
-    print(coins)
-    actual_html: str = CoinsParser.html(coins)
+    coin_spans: CoinSpanList = []
+    for raw_coin_span_list in json.loads(input_json):
+        coin_spans.append(
+            [tuple(raw_coin_span_term) for raw_coin_span_term in raw_coin_span_list]
+        )
+    actual_html: str = CoinsParser.html(coin_spans)
     assert actual_html == expected_html
