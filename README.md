@@ -24,10 +24,9 @@ pip install coins-parser
 ## Usage
 
 
-
 Zotero allows you to export references as COinS tags. You can use this package to parse them and use them in your Python packages. This package offers a CoinsParser class that can parse an HTML string containing COinS tags into a Python list. This list contains a list of COinS metadata for each COinS span tag found in the HTML string.
 
-```console
+```python
 # parse several COinS tags from an HTML string (it will ignore the other HTML elements)
 from coins_parser import CoinsParser
 
@@ -45,7 +44,7 @@ for coin_span in coin_spans:
 
 You can also specify the HTML parser used to [any parser supported by beautifulsoup4](https://beautiful-soup-4.readthedocs.io/en/latest/#installing-a-parser). By default, the HTML parser is 'html.parser', which does not require installing additional packages. However, if you want to use a different HTML parser, like 'lxml', you will first need to install it as described in the previous link.
 
-```
+```python
 ### parse the COinS tags using the lxml parser
 coin_spans: CoinSpanList = CoinsParser.parse(html_with_coins_tags, beautiful_soup_parser='lxml')
 ```
@@ -54,7 +53,7 @@ You can covert COinS objects back into HTML.
 This can be useful if you want to inject one or more COinS span tags into your webpage
 so Zotero can recognize one or more items on a single page.
 
-```
+```python
 # Create two COinS objects
 from coins_parser import CoinsParser
 
